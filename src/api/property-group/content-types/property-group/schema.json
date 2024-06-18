@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "property_groups",
+  "info": {
+    "singularName": "property-group",
+    "pluralName": "property-groups",
+    "displayName": "PropertyGroup",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Properties": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "products.product-properties"
+    },
+    "Title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    }
+  }
+}

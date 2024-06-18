@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_products_product_properties",
+  "info": {
+    "displayName": "ProductProperties",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Key": {
+      "type": "string"
+    },
+    "Value": {
+      "type": "string"
+    }
+  }
+}

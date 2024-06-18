@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "data_sheets",
+  "info": {
+    "singularName": "data-sheet",
+    "pluralName": "data-sheets",
+    "displayName": "Data Sheet",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Product": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "Tagline": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "Highlights": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
+    },
+    "property_groups": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::property-group.property-group"
+    }
+  }
+}

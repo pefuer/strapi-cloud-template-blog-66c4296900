@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_public_quotes",
+  "info": {
+    "displayName": "Quote",
+    "icon": "message",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "body": {
+      "type": "string",
+      "required": true
+    },
+    "author": {
+      "type": "string"
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "width 100",
+        "width 70",
+        "width 50"
+      ],
+      "default": "width 100"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_public_teaser_blocks",
+  "info": {
+    "displayName": "Teaser Block",
+    "icon": "star",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "teaser": {
+      "displayName": "Teaser",
+      "type": "component",
+      "repeatable": true,
+      "component": "public.teaser",
+      "max": 2
+    }
+  }
+}

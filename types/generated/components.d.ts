@@ -12,6 +12,157 @@ export interface ProductsProductProperties extends Schema.Component {
   };
 }
 
+export interface PublicHeadline extends Schema.Component {
+  collectionName: 'components_public_headlines';
+  info: {
+    displayName: 'Headline';
+    icon: 'crown';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface PublicHero extends Schema.Component {
+  collectionName: 'components_public_heroes';
+  info: {
+    displayName: 'Hero';
+    icon: 'alien';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    body: Attribute.String & Attribute.Required;
+    media: Attribute.Media & Attribute.Required;
+    link: Attribute.Relation<'public.hero', 'oneToOne', 'api::page.page'>;
+    linkLabel: Attribute.String;
+  };
+}
+
+export interface PublicIntro extends Schema.Component {
+  collectionName: 'components_public_intros';
+  info: {
+    displayName: 'Intro';
+    icon: 'filter';
+    description: '';
+  };
+  attributes: {
+    meta: Attribute.String;
+    title: Attribute.String;
+    body: Attribute.Text;
+  };
+}
+
+export interface PublicMedia extends Schema.Component {
+  collectionName: 'components_public_media';
+  info: {
+    displayName: 'Media';
+    icon: 'landscape';
+    description: '';
+  };
+  attributes: {
+    type: Attribute.Enumeration<['image', 'video']> &
+      Attribute.DefaultTo<'image'>;
+    media: Attribute.Media;
+    layout: Attribute.Enumeration<['width_100', 'width_70', 'width_50']> &
+      Attribute.DefaultTo<'width_100'>;
+    alignment: Attribute.Enumeration<['left', 'right']> &
+      Attribute.DefaultTo<'left'>;
+  };
+}
+
+export interface PublicParagraphImage extends Schema.Component {
+  collectionName: 'components_public_paragraph_images';
+  info: {
+    displayName: 'Paragraph Image';
+    icon: 'cup';
+    description: '';
+  };
+  attributes: {
+    body: Attribute.Text & Attribute.Required;
+    media: Attribute.Media & Attribute.Required;
+    layout: Attribute.Enumeration<['width_50-50', 'width_70-30']> &
+      Attribute.DefaultTo<'width_50-50'>;
+    reverse: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface PublicParagraph extends Schema.Component {
+  collectionName: 'components_public_paragraphs';
+  info: {
+    displayName: 'Paragraph';
+    icon: 'layer';
+    description: '';
+  };
+  attributes: {
+    body: Attribute.Text & Attribute.Required;
+    layout: Attribute.Enumeration<['width_100', 'width_70', 'width_50']> &
+      Attribute.DefaultTo<'width_100'>;
+    alignment: Attribute.Enumeration<['left', 'right']> &
+      Attribute.DefaultTo<'left'>;
+  };
+}
+
+export interface PublicQuote extends Schema.Component {
+  collectionName: 'components_public_quotes';
+  info: {
+    displayName: 'Quote';
+    icon: 'message';
+    description: '';
+  };
+  attributes: {
+    body: Attribute.String & Attribute.Required;
+    author: Attribute.String;
+    layout: Attribute.Enumeration<['width 100', 'width 70', 'width 50']> &
+      Attribute.DefaultTo<'width 100'>;
+  };
+}
+
+export interface PublicTeaserBlock extends Schema.Component {
+  collectionName: 'components_public_teaser_blocks';
+  info: {
+    displayName: 'Teaser Block';
+    icon: 'star';
+    description: '';
+  };
+  attributes: {
+    teaser: Attribute.Component<'public.teaser', true> &
+      Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
+  };
+}
+
+export interface PublicTeaser extends Schema.Component {
+  collectionName: 'components_public_teasers';
+  info: {
+    displayName: 'Teaser';
+    icon: 'alien';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    body: Attribute.String;
+    media: Attribute.Media & Attribute.Required;
+    link: Attribute.Relation<
+      'public.teaser',
+      'oneToOne',
+      'api::article.article'
+    >;
+    linkLabel: Attribute.String;
+    layout: Attribute.Enumeration<['large', 'medium']> &
+      Attribute.DefaultTo<'large'>;
+    colorStart: Attribute.Enumeration<['blue', 'red', 'yellow', 'green']> &
+      Attribute.DefaultTo<'blue'>;
+    colorEnd: Attribute.Enumeration<['yellow', 'purple', 'indigo', 'grey']> &
+      Attribute.DefaultTo<'yellow'>;
+  };
+}
+
 export interface SharedMedia extends Schema.Component {
   collectionName: 'components_shared_media';
   info: {
@@ -78,6 +229,15 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'products.product-properties': ProductsProductProperties;
+      'public.headline': PublicHeadline;
+      'public.hero': PublicHero;
+      'public.intro': PublicIntro;
+      'public.media': PublicMedia;
+      'public.paragraph-image': PublicParagraphImage;
+      'public.paragraph': PublicParagraph;
+      'public.quote': PublicQuote;
+      'public.teaser-block': PublicTeaserBlock;
+      'public.teaser': PublicTeaser;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

@@ -1,0 +1,62 @@
+{
+  "collectionName": "components_public_teasers",
+  "info": {
+    "displayName": "Teaser",
+    "icon": "alien",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "string"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "link": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::article.article"
+    },
+    "linkLabel": {
+      "type": "string"
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "large",
+        "medium"
+      ],
+      "default": "large"
+    },
+    "colorStart": {
+      "type": "enumeration",
+      "enum": [
+        "blue",
+        "red",
+        "yellow",
+        "green"
+      ],
+      "default": "blue"
+    },
+    "colorEnd": {
+      "type": "enumeration",
+      "enum": [
+        "yellow",
+        "purple",
+        "indigo",
+        "grey"
+      ],
+      "default": "yellow"
+    }
+  }
+}

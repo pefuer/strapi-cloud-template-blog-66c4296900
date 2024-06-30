@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_public_paragraph_images",
+  "info": {
+    "displayName": "Paragraph Image",
+    "icon": "cup",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "body": {
+      "type": "text",
+      "required": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "width_50-50",
+        "width_70-30"
+      ],
+      "default": "width_50-50"
+    },
+    "reverse": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
